@@ -58,18 +58,18 @@ class ChatScreenComponent extends ConsumerWidget {
                       padding: const EdgeInsets.symmetric(vertical: 8),
                       child: Row(
                         children: [
-                          Container(
-                            height: 38,
-                            width: 38,
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(width: 1),
-                                image: DecorationImage(
-                                  image: CachedNetworkImageProvider(
-                                      item[index].profileImg ?? ""),
-                                  fit: BoxFit.cover,
-                                )),
-                          ),
+                          // Container(
+                          //   height: 38,
+                          //   width: 38,
+                          //   decoration: BoxDecoration(
+                          //       shape: BoxShape.circle,
+                          //       border: Border.all(width: 1),
+                          //       image: DecorationImage(
+                          //         image: CachedNetworkImageProvider(
+                          //             item[index].profileImg ?? ""),
+                          //         fit: BoxFit.cover,
+                          //       )),
+                          // ),
                           const SizedBox(
                             width: 8,
                           ),

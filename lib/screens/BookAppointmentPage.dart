@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+// import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
@@ -51,71 +51,77 @@ class _BookAppointmentPageState extends State<BookAppointmentPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SvgPicture.asset(
-              'assets/images/doc.svg',
-              semanticsLabel: 'My SVG Image',
-              height: 150,
-            ),
-            const SizedBox(height: 20),
-            // Name field
-            TextField(
-              controller: _nameController,
-              decoration: const InputDecoration(
-                labelText: 'Full Name',
-                labelStyle: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 16.0,
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.deepPurple),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.deepPurpleAccent),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Image(
+                image: AssetImage('assets/images/doc.png'),
+                height: 200,
+              ),
+              // SvgPicture.asset(
+              //   'assets/images/doc.svg',
+              //   semanticsLabel: 'My SVG Image',
+              //   height: 150,
+              // ),
+              const SizedBox(height: 20),
+              // Name field
+              TextField(
+                controller: _nameController,
+                decoration: const InputDecoration(
+                  labelText: 'Full Name',
+                  labelStyle: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 16.0,
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.deepPurple),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.deepPurpleAccent),
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: 16),
-            // Date field
-            TextField(
-              controller: _dateController,
-              readOnly: true,
-              onTap: () => _showDatePicker(context),
-              decoration: const InputDecoration(
-                labelText: 'Date',
-                labelStyle: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 16.0,
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.deepPurple),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.deepPurpleAccent),
-                ),
-              ),
-            ),
-            const SizedBox(height: 16),
-            // Book appointment button
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.deepPurple,
-                padding: const EdgeInsets.all(16.0),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0),
+              const SizedBox(height: 16),
+              // Date field
+              TextField(
+                controller: _dateController,
+                readOnly: true,
+                onTap: () => _showDatePicker(context),
+                decoration: const InputDecoration(
+                  labelText: 'Date',
+                  labelStyle: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 16.0,
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.deepPurple),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.deepPurpleAccent),
+                  ),
                 ),
               ),
-              onPressed: () => _bookAppointment(),
-              child: Text('Book Appointment',
-                  style: GoogleFonts.balsamiqSans(
-                    color: Colors.white,
-                    fontSize: 16,
-                  )),
-            ),
-          ],
+              const SizedBox(height: 16),
+              // Book appointment button
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.deepPurple,
+                  padding: const EdgeInsets.all(16.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
+                ),
+                onPressed: () => _bookAppointment(),
+                child: Text('Book Appointment',
+                    style: GoogleFonts.balsamiqSans(
+                      color: Colors.white,
+                      fontSize: 16,
+                    )),
+              ),
+            ],
+          ),
         ),
       ),
     );

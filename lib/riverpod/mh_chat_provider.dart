@@ -42,7 +42,7 @@ class ChatList extends StateNotifier<List<MhChat>> {
                 "https://cdn.pixabay.com/photo/2021/11/15/05/52/red-fox-6796430_960_720.jpg",
             isSend: false,
             msg:
-                "We are experiencing exceptionally high demand. Please hang tight as we work on scaling our systems.S",
+                "ERROR11205\nWe are having trouble connecting to the server. Please try again later.",
             time: DateFormat("HH:mm").format(DateTime.now()),
             uid: const Uuid().v4())
       ];

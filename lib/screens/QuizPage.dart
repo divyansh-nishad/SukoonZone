@@ -103,23 +103,21 @@ class _QuizPageState extends State<QuizPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text(
-            'Quiz',
-            style: GoogleFonts.balsamiqSans(
-              fontWeight: FontWeight.bold,
-              color: Colors.grey,
-            ),
+        title: Text(
+          'Quiz',
+          style: GoogleFonts.balsamiqSans(
+            fontWeight: FontWeight.bold,
+            color: Colors.grey,
           ),
-          backgroundColor: Colors.transparent,
-          elevation: 0.0,
-          leading: IconButton(
-              icon: const Icon(Icons.arrow_back, color: Colors.grey),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const FileUpload()),
-                );
-              })),
+        ),
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        leading: IconButton(
+            icon: const Icon(Icons.arrow_back, color: Colors.grey),
+            onPressed: () {
+              Navigator.pop(context);
+            }),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:talkspace/screens/QuizComponent.dart';
 import 'package:talkspace/screens/QuizPage.dart';
 // import 'package:talkspace/screens/quizcolumn.dart';
 
@@ -39,10 +40,10 @@ class _MentalHealthMainScreenState extends State<MentalHealthMainScreen> {
               case 1:
                 return const MentalChatComponent();
               case 2:
-                return  MentalWellnessComponent();
+                return MentalWellnessComponent();
               case 3:
                 // return QuizPage();
-                return QuizPage();
+                return QuizComponent();
               default:
                 return Container();
             }

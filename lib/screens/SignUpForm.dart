@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:talkspace/screens/homepage.dart';
@@ -21,7 +22,11 @@ class _SignUpFormState extends State<SignUpForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Register here'),
+        title: Text('Register here',
+            style: GoogleFonts.balsamiqSans(
+              // color: Colors.grey,
+              fontSize: 20,
+            )),
         backgroundColor: Colors.deepPurple,
       ),
       body: Padding(
@@ -32,18 +37,25 @@ class _SignUpFormState extends State<SignUpForm> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
+                const Image(
+                  image: AssetImage('assets/images/sign.png'),
+                  height: 120,
+                ),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child:
-                      Text('ComfortConnect', style: TextStyle(fontSize: 24.0)),
+                  child: Text('ComfortConnect',
+                      style: GoogleFonts.balsamiqSans(
+                        // color: Colors.grey,
+                        fontSize: 24,
+                      )),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
                     "Help us train our AI to better understand your mental health",
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.deepPurple,
+                    style: GoogleFonts.balsamiqSans(
+                      color: Colors.deepPurpleAccent,
+                      fontSize: 16,
                     ),
                   ),
                 ),
@@ -53,6 +65,10 @@ class _SignUpFormState extends State<SignUpForm> {
                     labelText: 'Name',
                     border: OutlineInputBorder(),
                   ),
+                  style: GoogleFonts.balsamiqSans(
+                      // color: Colors.grey,
+                      // fontSize: 20,
+                      ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your name';
@@ -69,6 +85,10 @@ class _SignUpFormState extends State<SignUpForm> {
                     labelText: 'Email',
                     border: OutlineInputBorder(),
                   ),
+                  style: GoogleFonts.balsamiqSans(
+                      // color: Colors.grey,
+                      // fontSize: 20,
+                      ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your email address';
@@ -85,6 +105,10 @@ class _SignUpFormState extends State<SignUpForm> {
                     labelText: 'Gender',
                     border: OutlineInputBorder(),
                   ),
+                  style: GoogleFonts.balsamiqSans(
+                      // color: Colors.grey,
+                      // fontSize: 20,
+                      ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your gender';
@@ -106,6 +130,10 @@ class _SignUpFormState extends State<SignUpForm> {
                     labelText: 'Age',
                     border: OutlineInputBorder(),
                   ),
+                  style: GoogleFonts.balsamiqSans(
+                      // color: Colors.grey,
+                      // fontSize: 20,
+                      ),
                   keyboardType: TextInputType.number,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -123,6 +151,10 @@ class _SignUpFormState extends State<SignUpForm> {
                     labelText: 'Password',
                     border: OutlineInputBorder(),
                   ),
+                  style: GoogleFonts.balsamiqSans(
+                      // color: Colors.grey,
+                      // fontSize: 20,
+                      ),
                   obscureText: true,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -149,9 +181,15 @@ class _SignUpFormState extends State<SignUpForm> {
                         // perform sign-up action
                       }
                     },
-                    child: Text('Sign up'),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.deepPurple,
+                    ),
+                    child: Text(
+                      'Sign up',
+                      style: GoogleFonts.balsamiqSans(
+                          // color: Colors.grey,
+                          // fontSize: 20,
+                          ),
                     ),
                   ),
                 ),

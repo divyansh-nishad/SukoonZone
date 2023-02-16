@@ -11,10 +11,11 @@ class FileUpload extends StatelessWidget {
           'Subjective Answers',
           style: TextStyle(color: Colors.grey),
         ),
-        leading: Icon(
-          Icons.arrow_back,
-          color: Colors.grey,
-        ),
+        leading: IconButton(
+            icon: const Icon(Icons.arrow_back, color: Colors.grey),
+            onPressed: () {
+              Navigator.pop(context);
+            }),
         backgroundColor: Colors.transparent,
         elevation: 0.0,
       ),

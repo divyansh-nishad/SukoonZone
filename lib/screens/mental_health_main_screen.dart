@@ -39,7 +39,7 @@ class _MentalHealthMainScreenState extends State<MentalHealthMainScreen> {
               case 1:
                 return const MentalChatComponent();
               case 2:
-                return const MentalWellnessComponent();
+                return  MentalWellnessComponent();
               case 3:
                 // return QuizPage();
                 return QuizPage();

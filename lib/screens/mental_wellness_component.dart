@@ -7,7 +7,46 @@ import '../../data/fake_wellness.dart';
 import '../../riverpod/bottom_tab_provider.dart';
 
 class MentalWellnessComponent extends StatelessWidget {
-  const MentalWellnessComponent({Key? key}) : super(key: key);
+  MentalWellnessComponent({Key? key}) : super(key: key);
+  List NGO = [
+    {
+      "name": "Child Rights and You (CRY)",
+      "mobile_number": "+91-22-61454900",
+      "address": "189/A Anand Estate, Sane Guruji Marg, Mumbai - 400011, India",
+      "image_link":
+          "https://www.cry.org/wp-content/uploads/2019/04/logo_cry.jpg"
+    },
+    {
+      "name": "ActionAid India",
+      "mobile_number": "+91-11-4155-2300",
+      "address": "A-3, Defence Colony, New Delhi - 110024, India",
+      "image_link":
+          "https://www.actionaidindia.org/wp-content/themes/aii/images/logo.svg"
+    },
+    {
+      "name": "HelpAge India",
+      "mobile_number": "+91-11-41688955",
+      "address": "C-14, Qutab Institutional Area, New Delhi - 110016, India",
+      "image_link":
+          "https://www.helpageindia.org/wp-content/uploads/2018/03/logo.png"
+    },
+    {
+      "name": "Oxfam India",
+      "mobile_number": "+91-11-4653-8000",
+      "address":
+          "4th and 5th Floor, Shriram Bharatiya Kala Kendra, Copernicus Marg, New Delhi - 110001, India",
+      "image_link":
+          "https://www.oxfamindia.org/sites/all/themes/oxfamindia/images/logo.png"
+    },
+    {
+      "name": "SOS Children's Villages of India",
+      "mobile_number": "+91-11-49500500",
+      "address":
+          "SOS Children's Villages of India, National Office, Plot No.4, Block C-1, Institutional Area, Nelson Mandela Marg, Vasant Kunj, New Delhi - 110070, India",
+      "image_link":
+          "https://www.soschildrensvillages.in/sites/default/files/2021-05/logo_2.png"
+    }
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +65,7 @@ class MentalWellnessComponent extends StatelessWidget {
                 builder: (context, ref, _) {
                   return GestureDetector(
                     onTap: () {
-                      ref
-                          .read(mhBottomTabProvider.notifier)
-                          .state = 0;
+                      ref.read(mhBottomTabProvider.notifier).state = 0;
                     },
                     child: Container(
                       height: 48,
@@ -69,7 +106,8 @@ class MentalWellnessComponent extends StatelessWidget {
                 ),
                 const Text(
                   "The essential wellness part works to develop helpful beliefs about your life",
-                  style: TextStyle(fontWeight: FontWeight.w400, color: Colors.grey),
+                  style: TextStyle(
+                      fontWeight: FontWeight.w400, color: Colors.grey),
                 ),
                 const SizedBox(
                   height: 24,
@@ -89,7 +127,8 @@ class MentalWellnessComponent extends StatelessWidget {
                       child: const Center(
                         child: Text(
                           "Unlock All",
-                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 12),
                         ),
                       ),
                     ),
@@ -116,9 +155,11 @@ class MentalWellnessComponent extends StatelessWidget {
                             child: Container(
                               height: 110,
                               decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.black, width: 1.5),
+                                  border: Border.all(
+                                      color: Colors.black, width: 1.5),
                                   borderRadius: BorderRadius.circular(24)),
-                              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 8, vertical: 8),
                               child: Row(
                                 children: [
                                   Container(
@@ -133,21 +174,27 @@ class MentalWellnessComponent extends StatelessWidget {
                                             fit: BoxFit.cover)),
                                     child: Center(
                                       child: CircleAvatar(
-                                        backgroundColor: (fakeWellness[index].isLock ?? false)
-                                            ? Colors.red
-                                            : Colors.blue,
+                                        backgroundColor:
+                                            (fakeWellness[index].isLock ??
+                                                    false)
+                                                ? Colors.red
+                                                : Colors.blue,
                                         foregroundColor: Colors.white,
-                                        child: Icon((fakeWellness[index].isLock ?? false)
-                                            ? Icons.visibility
-                                            : Icons.lock),
+                                        child: Icon(
+                                            (fakeWellness[index].isLock ??
+                                                    false)
+                                                ? Icons.visibility
+                                                : Icons.lock),
                                       ),
                                     ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Text(
                                           fakeWellness[index].title ?? "",

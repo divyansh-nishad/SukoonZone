@@ -1,14 +1,42 @@
+import 'dart:ui';
+
 import 'package:coolicons/coolicons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:talkspace/screens/SignUpForm.dart';
+import 'package:talkspace/screens/doctor_profile.dart';
+import 'package:url_launcher/url_launcher.dart';
+// import 'package:alan_voice/alan_voice.dart';
 
 import '../../riverpod/bottom_tab_provider.dart';
 
 class MentalHomeComponent extends StatelessWidget {
-  const MentalHomeComponent({Key? key}) : super(key: key);
+  MentalHomeComponent({Key? key}) : super(key: key);
+  List doctors = [
+    {
+      "name": "Emma Johnson",
+      "image_link":
+          "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      "name": "Maxwell Lee",
+      "image_link":
+          "https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+    },
+    {
+      "name": "Sophia Patel",
+      "image_link":
+          "https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80"
+    },
+    {
+      "name": "Oliver Brown",
+      "image_link":
+          "https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+    }
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -64,6 +92,10 @@ class MentalHomeComponent extends StatelessWidget {
                   PopupMenuItem(
                     child: Text('Sign out'),
                     value: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SignUpForm()),
+                      );
                       debugPrint('Signing out');
                     },
                   ),
@@ -174,6 +206,7 @@ class MentalHomeComponent extends StatelessWidget {
                       padding: const EdgeInsets.all(4),
                       child: InkWell(
                         onTap: () {
+                          // _launchURL();
                           print('mic');
                         },
                         child: Container(
@@ -243,10 +276,20 @@ class MentalHomeComponent extends StatelessWidget {
                               color: Colors.black,
                             )),
                         padding: const EdgeInsets.all(2),
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            color: Colors.blue,
-                            shape: BoxShape.circle,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(100.0),
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => DocProfile(),
+                                ),
+                              );
+                            },
+                            child: Image.network(
+                                doctors[index]['image_link'].toString(),
+                                fit: BoxFit.fitHeight),
                           ),
                         ),
                       ),
@@ -264,7 +307,7 @@ class MentalHomeComponent extends StatelessWidget {
                   ),
                 );
               },
-              itemCount: 10,
+              itemCount: doctors.length,
               scrollDirection: Axis.horizontal,
             ),
           ),
@@ -337,7 +380,7 @@ class MentalHomeComponent extends StatelessWidget {
                           "Talk Now",
                         ),
                       ),
-                    )
+                    ),
                   ],
                 )
               ],
@@ -480,7 +523,8 @@ class MentalHomeComponent extends StatelessWidget {
               );
             },
           ),
-        )
+        ),
+        // _MyHomePageState(),
       ],
     );
   }

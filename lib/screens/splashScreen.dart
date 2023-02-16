@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:talkspace/screens/SignUpForm.dart';
+import 'package:talkspace/screens/signup_page.dart';
 
 import 'homepage.dart';
 
@@ -21,10 +23,17 @@ class _SplashscreenState extends State<SplashScreen> {
   @override
   void initState() {
     Timer(const Duration(seconds: 3), () {
+      // Navigator.pushReplacement(
+      //   context,
+      //   PageTransition(
+      //       child: const MentalHealthApp(),
+      //       type: PageTransitionType.leftToRight),
+      // );
       Navigator.pushReplacement(
-          context,
-          PageTransition(
-              child: const MentalHealthApp(), type: PageTransitionType.leftToRight));
+        context,
+        PageTransition(
+            child: SignUpForm(), type: PageTransitionType.leftToRight),
+      );
     });
     super.initState();
   }
@@ -46,7 +55,7 @@ class _SplashscreenState extends State<SplashScreen> {
             // ),
             RichText(
               text: const TextSpan(
-                text: 'TalkSpace',
+                text: 'ComfortConnect',
                 style: TextStyle(
                   // fontFamily: GoogleFonts.poppins().fontFamily,
                   fontWeight: FontWeight.bold,

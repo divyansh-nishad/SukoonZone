@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter_notebook_16th_story/ep978_mental_health_app/src/riverpod/chat_text_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../riverpod/bottom_tab_provider.dart';
 import '../riverpod/chat_text_provider.dart';
@@ -48,7 +49,12 @@ class MentalChatComponent extends StatelessWidget {
                   );
                 },
               ),
-              const Text("Comfort connect"),
+              Text(
+                "Comfort connect",
+                style: GoogleFonts.balsamiqSans(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               const Icon(Icons.more_horiz)
             ],
           ),

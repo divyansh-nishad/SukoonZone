@@ -143,7 +143,13 @@ class _QuizComponentState extends State<QuizComponent> {
                   );
                 },
               ),
-              const Text("Cognitive Combat"),
+              Text(
+                "Cognitive Combat",
+                style: GoogleFonts.balsamiqSans(
+                  // fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
               const Icon(Icons.more_horiz)
             ],
           ),
@@ -154,17 +160,23 @@ class _QuizComponentState extends State<QuizComponent> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
+                Text(
                   "Answer these questions to get your assesment done",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  style: GoogleFonts.balsamiqSans(
+                    // fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
                 ),
                 const SizedBox(
                   height: 16,
                 ),
-                const Text(
+                Text(
                   "Your data will be kept confidential and used for improving our recommendations.",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w400, color: Colors.grey),
+                  style: GoogleFonts.balsamiqSans(
+                    // fontWeight: FontWeight.bold,
+                    fontSize: 15,
+                    color: Colors.deepPurple,
+                  ),
                 ),
                 const SizedBox(
                   height: 24,

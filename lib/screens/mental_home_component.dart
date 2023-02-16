@@ -49,7 +49,7 @@ class MentalHomeComponent extends StatelessWidget {
           child: Row(
             children: [
               Text(
-                "My Spaces",
+                "Comfort Connect",
                 style: GoogleFonts.balsamiqSans(
                   fontWeight: FontWeight.bold,
                   color: Colors.grey,
@@ -85,13 +85,23 @@ class MentalHomeComponent extends StatelessWidget {
                 },
                 itemBuilder: (context) => [
                   PopupMenuItem(
-                    child: Text('About us'),
+                    child: Text(
+                      'About us',
+                      style: GoogleFonts.balsamiqSans(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                     value: () {
                       debugPrint('About');
                     },
                   ),
                   PopupMenuItem(
-                    child: Text('Sign out'),
+                    child: Text(
+                      'Sign out',
+                      style: GoogleFonts.balsamiqSans(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                     value: () {
                       Navigator.push(
                         context,
@@ -127,7 +137,7 @@ class MentalHomeComponent extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Hello Kartik",
+                      "Hello SunSeeker",
                       style: GoogleFonts.balsamiqSans(
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
@@ -208,6 +218,7 @@ class MentalHomeComponent extends StatelessWidget {
                       child: InkWell(
                         onTap: () {
                           // _launchURL();
+                          callTwilio();
                           print('mic');
                         },
                         child: Container(
@@ -235,11 +246,21 @@ class MentalHomeComponent extends StatelessWidget {
           ),
           child: Row(
             children: [
-              const Text("Self Care"),
+              Text(
+                "Meet Councellors",
+                style: GoogleFonts.balsamiqSans(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               const Spacer(),
               Column(
                 children: [
-                  const Text("See All"),
+                  Text(
+                    "See All",
+                    style: GoogleFonts.balsamiqSans(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                   const SizedBox(
                     height: 4,
                   ),
@@ -382,6 +403,15 @@ class MentalHomeComponent extends StatelessWidget {
                         ),
                       ),
                     ),
+                    Text(
+                      'Use the chat option below.',
+                      overflow: TextOverflow.clip,
+                      maxLines: 1,
+                      softWrap: false,
+                      style: GoogleFonts.balsamiqSans(
+                        fontWeight: FontWeight.normal,
+                      ),
+                    )
                   ],
                 )
               ],
@@ -532,6 +562,12 @@ class MentalHomeComponent extends StatelessWidget {
 }
 
 callNumber() async {
+  const number = '+91112'; //set the number here
+  bool? res = await FlutterPhoneDirectCaller.callNumber(number);
+  print('Inside Function');
+} 
+
+callTwilio() async {
   const number = '+916392031302'; //set the number here
   bool? res = await FlutterPhoneDirectCaller.callNumber(number);
   print('Inside Function');

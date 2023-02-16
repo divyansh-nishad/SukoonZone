@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
 
 import '../../data/fake_wellness.dart';
@@ -39,7 +40,7 @@ class MentalWellnessComponent extends StatelessWidget {
           "https://www.oxfamindia.org/sites/all/themes/oxfamindia/images/logo.png"
     },
     {
-      "name": "SOS Children's Villages of India",
+      "name": "SOS Children's Villages",
       "mobile_number": "+91-11-49500500",
       "address":
           "SOS Children's Villages of India, National Office, Plot No.4, Block C-1, Institutional Area, Nelson Mandela Marg, Vasant Kunj, New Delhi - 110070, India",
@@ -86,7 +87,10 @@ class MentalWellnessComponent extends StatelessWidget {
                   );
                 },
               ),
-              const Text("Wellness"),
+              Text("Wellness",
+                  style: GoogleFonts.balsamiqSans(
+                    fontWeight: FontWeight.bold,
+                  )),
               const Icon(Icons.more_horiz)
             ],
           ),
@@ -97,55 +101,70 @@ class MentalWellnessComponent extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  "5 Exercises",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                Text(
+                  "Join for creating lasting change and impact",
+                  style: GoogleFonts.balsamiqSans(
+                    // fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
                 ),
                 const SizedBox(
                   height: 16,
                 ),
-                const Text(
-                  "The essential wellness part works to develop helpful beliefs about your life",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w400, color: Colors.grey),
+                // const Text(
+                //   "The essential wellness part works to develop helpful beliefs about your life",
+                //   style: TextStyle(
+                //       fontWeight: FontWeight.w400, color: Colors.grey),
+                // ),
+                // const SizedBox(
+                //   height: 24,
+                // ),
+                // Row(
+                //   children: [
+                //     Container(
+                //       padding: const EdgeInsets.symmetric(
+                //         horizontal: 16,
+                //         vertical: 4,
+                //       ),
+                //       decoration: BoxDecoration(
+                //         color: Colors.yellow,
+                //         borderRadius: BorderRadius.circular(16),
+                //         border: Border.all(color: Colors.black, width: 1.5),
+                //       ),
+                //       child: const Center(
+                //         child: Text(
+                //           "Unlock All",
+                //           style: TextStyle(
+                //               fontWeight: FontWeight.bold, fontSize: 12),
+                //         ),
+                //       ),
+                //     ),
+                //     const Spacer(),
+                //     const Icon(Ionicons.thumbs_up_outline),
+                //     const SizedBox(
+                //       width: 16,
+                //     ),
+                //     const Icon(Ionicons.share_social)
+                //   ],
+                // ),
+                Center(
+                  child: const Image(
+                    image: AssetImage('assets/images/logo5.png'),
+                    height: 200,
+                  ),
                 ),
-                const SizedBox(
-                  height: 24,
+                // const Padding(
+                //   padding: EdgeInsets.symmetric(vertical: 24),
+                //   child: Divider(color: Colors.black),
+                // ),
+                Text(
+                  "Some Non-Governmental Organizations",
+                  style: GoogleFonts.balsamiqSans(
+                    // fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
                 ),
-                Row(
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 16,
-                        vertical: 4,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.yellow,
-                        borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: Colors.black, width: 1.5),
-                      ),
-                      child: const Center(
-                        child: Text(
-                          "Unlock All",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 12),
-                        ),
-                      ),
-                    ),
-                    const Spacer(),
-                    const Icon(Ionicons.thumbs_up_outline),
-                    const SizedBox(
-                      width: 16,
-                    ),
-                    const Icon(Ionicons.share_social)
-                  ],
-                ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 24),
-                  child: Divider(color: Colors.black),
-                ),
-                const Text("10 Video Content"),
-                const SizedBox(height: 16),
+                const SizedBox(height: 25),
                 Expanded(
                     child: ListView.builder(
                         itemCount: fakeWellness.length,
@@ -168,25 +187,24 @@ class MentalWellnessComponent extends StatelessWidget {
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(16),
                                         image: DecorationImage(
-                                            image: CachedNetworkImageProvider(
-                                              fakeWellness[index].img ?? "",
-                                            ),
+                                            image: AssetImage(
+                                                'assets/images/logo2.jpg'),
                                             fit: BoxFit.cover)),
-                                    child: Center(
-                                      child: CircleAvatar(
-                                        backgroundColor:
-                                            (fakeWellness[index].isLock ??
-                                                    false)
-                                                ? Colors.red
-                                                : Colors.blue,
-                                        foregroundColor: Colors.white,
-                                        child: Icon(
-                                            (fakeWellness[index].isLock ??
-                                                    false)
-                                                ? Icons.visibility
-                                                : Icons.lock),
-                                      ),
-                                    ),
+                                    // child: Center(
+                                    //   child: CircleAvatar(
+                                    //     backgroundColor:
+                                    //         (fakeWellness[index].isLock ??
+                                    //                 false)
+                                    //             ? Colors.red
+                                    //             : Colors.blue,
+                                    //     foregroundColor: Colors.white,
+                                    //     child: Icon(
+                                    //         (fakeWellness[index].isLock ??
+                                    //                 false)
+                                    //             ? Icons.visibility
+                                    //             : Icons.lock),
+                                    //   ),
+                                    // ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
@@ -198,9 +216,10 @@ class MentalWellnessComponent extends StatelessWidget {
                                       children: [
                                         Text(
                                           fakeWellness[index].title ?? "",
-                                          style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                          ),
+                                          style: GoogleFonts.balsamiqSans(
+                                              // fontWeight: FontWeight.bold,
+                                              // fontSize: 20,
+                                              ),
                                         ),
                                         Text(
                                           fakeWellness[index].subtitle ?? "",
@@ -210,7 +229,10 @@ class MentalWellnessComponent extends StatelessWidget {
                                         ),
                                         Text(
                                           fakeWellness[index].time ?? "",
-                                          style: const TextStyle(fontSize: 12),
+                                          style: GoogleFonts.balsamiqSans(
+                                            // fontWeight: FontWeight.bold,
+                                            fontSize: 12,
+                                          ),
                                         ),
                                       ],
                                     ),

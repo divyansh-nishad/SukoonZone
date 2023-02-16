@@ -47,7 +47,7 @@ class FileUpload extends StatelessWidget {
                 // Navigate back to first route when tapped.
               },
               child: Text('Submit your answers.'),
-            )
+            ),
           ],
         ),
       ),

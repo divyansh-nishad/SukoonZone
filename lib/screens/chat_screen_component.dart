@@ -15,8 +15,9 @@ class ChatScreenComponent extends ConsumerWidget {
   Widget build(BuildContext context, ref) {
     return Container(
       padding: const EdgeInsets.all(16),
-      decoration:
-          BoxDecoration(borderRadius: BorderRadius.circular(24), border: Border.all(color: Colors.black, width: 1.5)),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(24),
+          border: Border.all(color: Colors.black, width: 1.5)),
       child: Column(
         children: [
           Expanded(
@@ -34,7 +35,8 @@ class ChatScreenComponent extends ConsumerWidget {
                             Text(item[index].time ?? "??:??"),
                             const Spacer(),
                             Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 16, vertical: 16),
                               decoration: BoxDecoration(
                                   color: Colors.blueGrey[50],
                                   border: Border.all(color: Colors.black),
@@ -63,13 +65,18 @@ class ChatScreenComponent extends ConsumerWidget {
                                 shape: BoxShape.circle,
                                 border: Border.all(width: 1),
                                 image: DecorationImage(
-                                  image: CachedNetworkImageProvider(item[index].profileImg ?? ""),
+                                  image: CachedNetworkImageProvider(
+                                      item[index].profileImg ?? ""),
                                   fit: BoxFit.cover,
                                 )),
                           ),
-                          const SizedBox(width: 8,),
+                          const SizedBox(
+                            width: 8,
+                          ),
                           Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 16, vertical: 16),
+                            width: MediaQuery.of(context).size.width * 0.6,
                             decoration: BoxDecoration(
                                 color: Colors.grey[50],
                                 border: Border.all(color: Colors.black),
@@ -79,12 +86,13 @@ class ChatScreenComponent extends ConsumerWidget {
                                   bottomRight: Radius.circular(24),
                                 )),
                             child: Center(
-                              child: Text("${item[index].msg}"),
+                              child: Text(
+                                "${item[index].msg}",
+                              ),
                             ),
                           ),
                           const Spacer(),
                           Text(item[index].time ?? "??:??"),
-
                         ],
                       ),
                     );

@@ -6,6 +6,7 @@ import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:talkspace/screens/BookAppointmentPage.dart';
 import 'package:talkspace/screens/SignUpForm.dart';
 import 'package:talkspace/screens/doctor_profile.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -157,7 +158,7 @@ class MentalHomeComponent extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Use Voice in Menta",
+                "Use Voice in Twilio",
                 style: GoogleFonts.balsamiqSans(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
@@ -283,7 +284,7 @@ class MentalHomeComponent extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => DocProfile(),
+                                  builder: (context) => BookAppointmentPage(),
                                 ),
                               );
                             },

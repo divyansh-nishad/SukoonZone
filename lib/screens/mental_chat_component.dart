@@ -28,7 +28,6 @@ class MentalChatComponent extends StatelessWidget {
                     onTap: () {
                       ref.read(chatTextProvider).clear();
                       ref.read(mhBottomTabProvider.notifier).state = 0;
-
                     },
                     child: Container(
                       height: 48,
@@ -49,7 +48,7 @@ class MentalChatComponent extends StatelessWidget {
                   );
                 },
               ),
-              const Text("Cope with Pain"),
+              const Text("Comfort connect"),
               const Icon(Icons.more_horiz)
             ],
           ),

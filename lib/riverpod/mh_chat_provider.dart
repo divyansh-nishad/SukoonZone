@@ -10,7 +10,8 @@ import 'package:uuid/uuid.dart';
 import '../model/mh_chat.dart';
 import 'chat_text_provider.dart';
 
-final mhChatProvider = StateNotifierProvider<ChatList, List<MhChat>>((ref) => ChatList([], ref));
+final mhChatProvider =
+    StateNotifierProvider<ChatList, List<MhChat>>((ref) => ChatList([], ref));
 
 class ChatList extends StateNotifier<List<MhChat>> {
   Ref ref;
@@ -26,7 +27,8 @@ class ChatList extends StateNotifier<List<MhChat>> {
     state = [
       ...state,
       MhChat(
-          profileImg: "https://cdn.pixabay.com/photo/2021/11/15/05/52/red-fox-6796430_960_720.jpg",
+          profileImg:
+              "https://cdn.pixabay.com/photo/2021/11/15/05/52/red-fox-6796430_960_720.jpg",
           isSend: true,
           msg: msg,
           time: DateFormat("HH:mm").format(DateTime.now()),
@@ -36,9 +38,11 @@ class ChatList extends StateNotifier<List<MhChat>> {
       state = [
         ...state,
         MhChat(
-            profileImg: "https://cdn.pixabay.com/photo/2021/11/15/05/52/red-fox-6796430_960_720.jpg",
+            profileImg:
+                "https://cdn.pixabay.com/photo/2021/11/15/05/52/red-fox-6796430_960_720.jpg",
             isSend: false,
-            msg: "Copy that.",
+            msg:
+                "We are experiencing exceptionally high demand. Please hang tight as we work on scaling our systems.S",
             time: DateFormat("HH:mm").format(DateTime.now()),
             uid: const Uuid().v4())
       ];

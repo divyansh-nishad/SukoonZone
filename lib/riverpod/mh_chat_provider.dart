@@ -44,7 +44,7 @@ class ChatList extends StateNotifier<List<MhChat>> {
             msg:
                 "ERROR11205\nWe are having trouble connecting to the server. Please try again later.",
             time: DateFormat("HH:mm").format(DateTime.now()),
-            uid: const Uuid().v4())
+            uid: const Uuid().v4()),
       ];
       receiveTimer?.cancel();
       receiveTimer = null;
